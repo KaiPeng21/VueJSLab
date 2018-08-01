@@ -1,0 +1,35 @@
+
+$primary-text-color: black;
+$header-text-color: aliceblue;
+
+body{
+    color: $primary-text-color;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+}
+
+.main{
+    margin-top: 30px;
+    padding: 2rem;
+}
+
+a{
+    text-decoration: none;
+    color: $header-text-color;
+
+    &:link{
+        text-decoration: none;
+    }
+    &:visited{
+        text-decoration: none;
+    }
+    &:hover{
+        text-decoration: none;
+    }
+    &:active{
+        text-decoration: none;
+    }
+}

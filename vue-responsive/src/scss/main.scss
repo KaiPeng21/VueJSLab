@@ -1,0 +1,113 @@
+// font size
+$base-font-size : 10px;
+
+// colors
+$primary-color : #444;
+$secondary-color : #eece1a;
+$primary-text-color : #fff;
+
+// images
+$show-home-image: true;
+$home-image: url('../assets/apple.jpg');
+$background-opacity: 0.5;
+
+// animation parameters
+$transition-time : 0.5s;
+
+@mixin easeOut {
+    transition: all $transition-time ease-out;
+}
+
+@mixin background{
+    @if $show-home-image {
+        background: $home-image;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+}
+
+// general
+html{
+    font-size: $base-font-size;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    
+    background-color: $primary-color;
+    @include background();
+    color: $primary-text-color;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+}
+
+#app{
+    margin: 10px;
+}
+
+// headings
+h1, h2, h3 {
+    margin: 0;
+    font-weight: 400;
+
+    &.lg-heading{
+        font-size: 4rem;
+    }
+
+    &.sm-heading{
+        padding: 0.2rem 1rem;
+        display: inline;
+        background: rgba(lighten($primary-color, 2), 0.5)
+    }
+}
+
+.text-secondary{
+    color: $secondary-color;
+}
+
+a{
+    color: $primary-text-color;
+    text-decoration: none;
+}
+
+header{
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+}
+
+// main pages
+.main{
+    padding: 4rem;
+    height: 100%;
+    scroll-behavior: unset;
+    margin: 0;
+
+    &#home {
+        
+
+        overflow: hidden;
+        h1 {
+            margin-top: 20vh;
+        }
+    }
+
+    .icons{
+        margin-top: 4rem;
+        
+        a{
+            padding: 0.4rem;
+
+            &:hover{
+                color: $secondary-color;
+                @include easeOut();
+            }
+        }
+    }
+}

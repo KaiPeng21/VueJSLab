@@ -1,32 +1,40 @@
 
 
 <template>
-  <div id="app">
-    <p>App</p>
-    <nav>
-      <router-link to="/">Home</router-link>
-      <router-link to="/about">About</router-link>
-      <router-link to="/insight">Insight</router-link>
-      <router-link to="/howto">How To</router-link>
+  <div>
+    <header>
+    <nav class="menu">
+      <ul class="menu-nav">
+        <li class="nav-item">
+          <router-link to="/">Home</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/about">About</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/insight">Insight</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/howto">How To?</router-link>
+        </li>
+      </ul>
     </nav>
+    </header>
 
     <router-view />
   </div>
 </template>
 
 <script>
+import Home from './components/Home.vue'
+
 export default {
-  name: 'app'
+  name: 'app',
+  components : {
+    Home
+  }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss" src="./scss/main.scss">
 </style>
